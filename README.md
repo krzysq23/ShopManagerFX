@@ -1,0 +1,2 @@
+# ShopManagerFX
+ShopManager JavaFX Application
