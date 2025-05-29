@@ -25,7 +25,7 @@
                 <graphic>
                     <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
                         <image>
-                            <Image url="@images/warehouse-icon.png" />
+                            <Image url="@../images/warehouse-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -45,7 +45,7 @@
                 <graphic>
                     <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
                         <image>
-                            <Image url="@images/search-icon.png" />
+                            <Image url="@../images/search-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -55,7 +55,7 @@
                 <graphic>
                     <ImageView fitHeight="28.0" fitWidth="28.0">
                         <image>
-                            <Image url="@images/avatar-icon.png" />
+                            <Image url="@../images/avatar-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -70,38 +70,56 @@
     <left>
 
         <VBox fx:id="leftMenuPanel" spacing="5">
-            <Button onAction="#handleProductListClick" styleClass="menuButton" text="Lista produktów">
+            <Button fx:id="homeBtn" onAction="#handleHomeClick" styleClass="menuButton" graphicTextGap="10" text="Pulpit">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@images/list-icon.png" />
+                            <Image url="@../images/home-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleAddProductClick" styleClass="menuButton" text="Dodaj produkt">
+            <Button fx:id="productsBtn" onAction="#handleProductClick" styleClass="menuButton" graphicTextGap="10" text="Produkty">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@images/product-icon.png" />
+                            <Image url="@../images/list-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleSettingsClick" styleClass="menuButton" text="Ustawienia">
+            <Button fx:id="categoriesBtn" onAction="#handleCategoryClick" styleClass="menuButton" graphicTextGap="10" text="Kategorie">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@images/settings-icon.png" />
+                            <Image url="@../images/product-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleProfileClick" styleClass="menuButton" text="Profil">
+            <Button fx:id="ordersBtn" onAction="#handleOrdersClick" styleClass="menuButton" graphicTextGap="10" text="Zamówienia">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@images/user-icon.png" />
+                            <Image url="@../images/product-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="usersBtn" onAction="#handleUsersClick" styleClass="menuButton" graphicTextGap="10" text="Użytkownicy">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16">
+                        <image>
+                            <Image url="@../images/user-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="settingsBtn" onAction="#handleSettingsClick" styleClass="menuButton" graphicTextGap="10" text="Ustawienia">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16">
+                        <image>
+                            <Image url="@../images/settings-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>

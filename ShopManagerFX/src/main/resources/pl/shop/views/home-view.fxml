@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.HomeController">
+
+    <Label graphicTextGap="10" layoutX="20.0" prefHeight="50.0" prefWidth="560.0" text="Strona główna">
+        <font>
+            <Font size="18.0" />
+        </font>
+        <graphic>
+            <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                <image>
+                    <Image url="@../images/home-icon.png" />
+                </image>
+            </ImageView>
+        </graphic>
+    </Label>
+
+</AnchorPane>

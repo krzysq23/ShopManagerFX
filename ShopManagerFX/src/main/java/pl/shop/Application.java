@@ -14,11 +14,15 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
 
         StageManager.getInstance().setPrimaryStage(stage);
-        StageManager.getInstance().addScreen("login", getClass().getResource("login-view.fxml"));
-        StageManager.getInstance().addScreen("main", getClass().getResource("main-view.fxml"));
-        StageManager.getInstance().addScreen("products", getClass().getResource("add-product-view.fxml"));
-        StageManager.getInstance().addScreen("addProduct", getClass().getResource("products-view.fxml"));
-        StageManager.getInstance().addScreen("settings", getClass().getResource("settings-view.fxml"));
+        StageManager.getInstance().addScreen("login", getClass().getResource("views/login-view.fxml"));
+        StageManager.getInstance().addScreen("main", getClass().getResource("views/main-view.fxml"));
+        StageManager.getInstance().addScreen("home", getClass().getResource("views/home-view.fxml"));
+        StageManager.getInstance().addScreen("products", getClass().getResource("views/products/products-view.fxml"));
+        StageManager.getInstance().addScreen("addProduct", getClass().getResource("views/products/add-products-view.fxml"));
+        StageManager.getInstance().addScreen("categories", getClass().getResource("views/products/categories-view.fxml"));
+        StageManager.getInstance().addScreen("orders", getClass().getResource("views/orders/orders-view.fxml"));
+        StageManager.getInstance().addScreen("users", getClass().getResource("views/settings/users-view.fxml"));
+        StageManager.getInstance().addScreen("settings", getClass().getResource("views/settings/settings-view.fxml"));
 
         StageManager.getInstance().loadScene("main");
     }

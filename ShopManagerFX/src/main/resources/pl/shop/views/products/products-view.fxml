@@ -5,30 +5,25 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pl.shop.controller.ProductsController">
 
-    <children>
-        <Label text="Widok produktów" layoutX="20" layoutY="20"/>
-    </children>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.ProductsController">
 
-    <Label layoutX="19.0" prefHeight="80.0" prefWidth="560.0" text="Lista produktów">
+    <Label graphicTextGap="10" layoutX="20.0" prefHeight="50.0" prefWidth="560.0" text="Produkty">
         <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
         </font>
         <graphic>
-            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+            <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
                 <image>
-                    <Image url="@images/warehouse-icon.png" />
+                    <Image url="@../../images/product-icon.png" />
                 </image>
             </ImageView>
         </graphic>
     </Label>
+
     <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
         <columns>
             <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />

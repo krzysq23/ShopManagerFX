@@ -1,15 +1,9 @@
 package pl.shop.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import pl.shop.model.Product;
 import pl.shop.service.StageManager;
 
 import java.io.IOException;
@@ -19,6 +13,12 @@ public class MainController {
     @FXML
     private AnchorPane contentPane;
 
+    private String activeView = "";
+
+    public void initialize() {
+        loadView("home");
+    }
+
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
         System.out.println("Wylogowywanie...");
@@ -26,31 +26,50 @@ public class MainController {
     }
 
     @FXML
-    public void handleProductListClick(ActionEvent actionEvent) {
-        loadView("products");
+    private void handleHomeClick(ActionEvent event) throws IOException {
+        loadView("home");
+        this.activeView = "home";
     }
 
     @FXML
-    public void handleAddProductClick(ActionEvent actionEvent) {
-        loadView("addProduct");
+    public void handleProductClick(ActionEvent actionEvent) {
+        loadView("products");
+        this.activeView = "products";
+    }
+
+    @FXML
+    public void handleCategoryClick(ActionEvent actionEvent) {
+        loadView("categories");
+        this.activeView = "categories";
+    }
+
+    @FXML
+    public void handleOrdersClick(ActionEvent actionEvent) {
+        loadView("orders");
+        this.activeView = "orders";
+    }
+
+    @FXML
+    public void handleUsersClick(ActionEvent actionEvent) {
+        loadView("users");
+        this.activeView = "users";
     }
 
     @FXML
     public void handleSettingsClick(ActionEvent actionEvent) {
         loadView("settings");
+        this.activeView = "settings";
     }
 
-    @FXML
-    public void handleProfileClick(ActionEvent actionEvent) {
-        loadView("settings");
-    }
 
     private void loadView(String name) {
-        Parent view = StageManager.getInstance().getParent(name);
-        contentPane.getChildren().setAll(view);
-        AnchorPane.setTopAnchor(view, 0.0);
-        AnchorPane.setBottomAnchor(view, 0.0);
-        AnchorPane.setLeftAnchor(view, 0.0);
-        AnchorPane.setRightAnchor(view, 0.0);
+        if(!this.activeView.equals(name)) {
+            Parent view = StageManager.getInstance().getParent(name);
+            contentPane.getChildren().setAll(view);
+            AnchorPane.setTopAnchor(view, 0.0);
+            AnchorPane.setBottomAnchor(view, 0.0);
+            AnchorPane.setLeftAnchor(view, 0.0);
+            AnchorPane.setRightAnchor(view, 0.0);
+        }
     }
 }
