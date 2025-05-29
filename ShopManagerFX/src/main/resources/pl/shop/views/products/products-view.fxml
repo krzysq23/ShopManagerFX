@@ -34,9 +34,9 @@
     </HBox>
 
     <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
-        <Button styleClass="myButton, success" text="Dodaj produkt" />
-        <Button styleClass="myButton, warning" text="Edytuj" />
-        <Button styleClass="myButton, danger" text="Usuń" />
+        <Button onAction="#addProductButton" styleClass="myButton, success" text="Dodaj produkt" />
+        <Button onAction="#editProductButton" styleClass="myButton, warning" text="Edytuj" />
+        <Button onAction="#removeProductButton" styleClass="myButton, danger" text="Usuń" />
         <Region HBox.hgrow="ALWAYS" />
         <HBox spacing="10" alignment="CENTER">
             <Label text="Wyszukaj:" />

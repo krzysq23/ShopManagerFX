@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import pl.shop.mock.MockProductDatabase;
 import pl.shop.mock.MockUsersDatabase;
 import pl.shop.model.Product;
+import pl.shop.service.StageManager;
 
 import java.io.IOException;
 
@@ -43,5 +44,22 @@ public class ProductsController {
             tableView.setItems(MockProductDatabase.search(lowerCaseFilter));
         });
     }
+
+    @FXML
+    private void addProductButton(ActionEvent event) throws IOException {
+        StageManager.getInstance().loadModal("add_product_modal", "Dodawanie produktu", 500, 400);
+    }
+
+    @FXML
+    private void editProductButton(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    private void removeProductButton(ActionEvent event) throws IOException {
+
+    }
+
+
 
 }

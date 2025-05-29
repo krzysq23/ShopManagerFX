@@ -70,14 +70,15 @@ public class StageManager {
     }
 
     public void loadModal(String modalName, String modalTitle, Integer width, Integer height) throws IOException {
-        Stage searchStage = new Stage();
-        searchStage.initModality(Modality.APPLICATION_MODAL);
-        searchStage.setResizable(false);
-        searchStage.setTitle(modalTitle);
+        Stage modalScene = new Stage();
+        modalScene.initModality(Modality.APPLICATION_MODAL);
+        modalScene.setResizable(false);
+        modalScene.setTitle(modalTitle);
         Parent root = new FXMLLoader(this.screenMap.get(modalName)).load();
+        root.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
         Scene scene = new Scene(root, width, height);
-        searchStage.setScene(scene);
-        searchStage.showAndWait();
+        modalScene.setScene(scene);
+        modalScene.showAndWait();
     }
 
     public Parent getParent(String name) {
