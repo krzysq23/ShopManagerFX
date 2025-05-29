@@ -13,6 +13,8 @@ public class Application extends javafx.application.Application {
 
         stage.setTitle("ShopManagerFX");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("images/app-icon.png")));
+        stage.setMinWidth(800);
+        stage.setMinHeight(500);
 
         StageManager.getInstance().setPrimaryStage(stage);
         StageManager.getInstance().addScreen("login", getClass().getResource("views/login-view.fxml"));
