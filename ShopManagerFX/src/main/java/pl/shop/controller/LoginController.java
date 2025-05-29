@@ -23,6 +23,7 @@ public class LoginController {
         String password = passwordField.getText();
 
         if ("admin".equals(login) && "admin".equals(password)) {
+            StageManager.getInstance().setUserName(login);
             StageManager.getInstance().loadScene("main");
         } else {
             showAlert(Alert.AlertType.ERROR, "Błąd", "Nieprawidłowy login lub hasło.");

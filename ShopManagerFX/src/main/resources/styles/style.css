@@ -41,5 +41,6 @@
     -fx-background-color: rgba(0, 0, 0, 0.05);
 }
 #logoutButton {
-
+    -fx-padding: 0 20 0 20;
+    -fx-pref-height: 25px;
 }

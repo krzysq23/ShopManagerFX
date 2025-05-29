@@ -3,6 +3,7 @@ package pl.shop.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
 import pl.shop.service.StageManager;
 
@@ -12,11 +13,14 @@ public class MainController {
 
     @FXML
     private AnchorPane contentPane;
+    @FXML
+    private MenuButton userMenuButton;
 
     private String activeView = "";
 
     public void initialize() {
         loadView("home");
+        userMenuButton.setText(StageManager.getInstance().getUserName());
     }
 
     @FXML

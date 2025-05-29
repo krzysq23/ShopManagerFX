@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,12 +14,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPanel" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.MainController">
+<BorderPane fx:id="mainPanel" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.MainController">
 
     <!-- Top Panel -->
     <top>
         <HBox fx:id="topMenuPanel" spacing="10">
-            <Label prefHeight="41.0" prefWidth="100.0" text="Magazyn">
+            <Label prefHeight="41.0" prefWidth="100.0" graphicTextGap="10" text="Magazyn">
                 <graphic>
                     <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
                         <image>
@@ -43,7 +41,7 @@
             <!-- Ikona lupy -->
             <Button prefHeight="41.0" prefWidth="43.0" styleClass="menuButtonTop">
                 <graphic>
-                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/search-icon.png" />
                         </image>
@@ -51,9 +49,9 @@
                 </graphic>
             </Button>
             <!-- Avatar z menu użytkownika -->
-            <MenuButton alignment="CENTER" prefHeight="41.0" prefWidth="59.0" styleClass="menuButtonTop">
+            <MenuButton fx:id="userMenuButton" alignment="CENTER" prefHeight="41.0" minWidth="100.0" graphicTextGap="5" styleClass="menuButtonTop">
                 <graphic>
-                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                    <ImageView fitHeight="24.0" fitWidth="24.0">
                         <image>
                             <Image url="@../images/avatar-icon.png" />
                         </image>
@@ -83,7 +81,7 @@
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@../images/list-icon.png" />
+                            <Image url="@../images/product-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -92,7 +90,7 @@
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@../images/product-icon.png" />
+                            <Image url="@../images/category-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -101,7 +99,7 @@
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
-                            <Image url="@../images/product-icon.png" />
+                            <Image url="@../images/order-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>

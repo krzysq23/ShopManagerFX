@@ -3,25 +3,19 @@ package pl.shop.service;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Map;
 
 public class StageManager {
 
     private static StageManager instance;
     private Stage stage;
+    private String userName = "default";
     private HashMap<String, URL> screenMap = new HashMap<>();
-    private Map<String, String> sceneTitles = Map.of(
-            "login", "Panel loggowania",
-            "main", "Panel główny"
-    );
 
     private StageManager() {
     }
@@ -45,6 +39,14 @@ public class StageManager {
         this.screenMap.remove(name);
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
     public void loadScene(String name) throws IOException {
         Parent root = new FXMLLoader(this.screenMap.get(name)).load();
         Scene currentScene = this.stage.getScene();
@@ -58,7 +60,6 @@ public class StageManager {
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         this.stage.centerOnScreen();
         this.stage.setScene(scene);
-        this.stage.setTitle(this.sceneTitles.get(name));
         this.stage.show();
     }
 

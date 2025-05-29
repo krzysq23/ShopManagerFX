@@ -18,7 +18,7 @@
         <graphic>
             <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
                 <image>
-                    <Image url="@../../images/product-icon.png" />
+                    <Image url="@../../images/order-icon.png" />
                 </image>
             </ImageView>
         </graphic>

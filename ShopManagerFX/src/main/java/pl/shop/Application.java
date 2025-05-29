@@ -1,10 +1,8 @@
 package pl.shop;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pl.shop.service.StageManager;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 
@@ -12,6 +10,9 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        stage.setTitle("ShopManagerFX");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("images/app-icon.png")));
 
         StageManager.getInstance().setPrimaryStage(stage);
         StageManager.getInstance().addScreen("login", getClass().getResource("views/login-view.fxml"));
