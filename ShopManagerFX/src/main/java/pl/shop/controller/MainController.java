@@ -2,17 +2,9 @@ package pl.shop.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import pl.shop.service.StageManager;
 
 import java.io.IOException;
@@ -39,28 +31,29 @@ public class MainController {
 
     @FXML
     private void openSearchWindow(ActionEvent event) throws IOException {
-        Stage searchStage = new Stage();
-        searchStage.initModality(Modality.APPLICATION_MODAL);
-        searchStage.setResizable(false);
-        searchStage.setTitle("Wyszukiwanie");
-
-        Label prompt = new Label("Wpisz czego szukasz:");
-        TextField searchField = new TextField();
-        Button searchActionButton = new Button("Szukaj");
-
-        searchActionButton.setOnAction(e -> {
-            String query = searchField.getText();
-            System.out.println("Wyszukiwanie: " + query);
-            searchStage.close();
-        });
-
-        VBox layout = new VBox(10, prompt, searchField, searchActionButton);
-        layout.setAlignment(Pos.CENTER);
-        layout.setStyle("-fx-padding: 20;");
-
-        Scene scene = new Scene(layout, 300, 150);
-        searchStage.setScene(scene);
-        searchStage.showAndWait();
+        StageManager.getInstance().loadModal("search_modal", "Wyszukiwanie", 300, 150);
+//        Stage searchStage = new Stage();
+//        searchStage.initModality(Modality.APPLICATION_MODAL);
+//        searchStage.setResizable(false);
+//        searchStage.setTitle("Wyszukiwanie");
+//
+//        Label prompt = new Label("Wpisz czego szukasz:");
+//        TextField searchField = new TextField();
+//        Button searchActionButton = new Button("Szukaj");
+//
+//        searchActionButton.setOnAction(e -> {
+//            String query = searchField.getText();
+//            System.out.println("Wyszukiwanie: " + query);
+//            searchStage.close();
+//        });
+//
+//        VBox layout = new VBox(10, prompt, searchField, searchActionButton);
+//        layout.setAlignment(Pos.CENTER);
+//        layout.setStyle("-fx-padding: 20;");
+//
+//        Scene scene = new Scene(layout, 300, 150);
+//        searchStage.setScene(scene);
+//        searchStage.showAndWait();
     }
 
     @FXML

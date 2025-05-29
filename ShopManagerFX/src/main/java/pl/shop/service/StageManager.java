@@ -1,8 +1,14 @@
 package pl.shop.service;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
@@ -61,6 +67,17 @@ public class StageManager {
         this.stage.centerOnScreen();
         this.stage.setScene(scene);
         this.stage.show();
+    }
+
+    public void loadModal(String modalName, String modalTitle, Integer width, Integer height) throws IOException {
+        Stage searchStage = new Stage();
+        searchStage.initModality(Modality.APPLICATION_MODAL);
+        searchStage.setResizable(false);
+        searchStage.setTitle(modalTitle);
+        Parent root = new FXMLLoader(this.screenMap.get(modalName)).load();
+        Scene scene = new Scene(root, width, height);
+        searchStage.setScene(scene);
+        searchStage.showAndWait();
     }
 
     public Parent getParent(String name) {

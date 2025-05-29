@@ -69,7 +69,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>pl.shop.shopmanagerfx/pl.shop.Application</mainClass>
+                            <mainClass>pl.shop/pl.shop.Application</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
