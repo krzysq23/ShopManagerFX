@@ -8,23 +8,35 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.ProductsController">
 
-    <Label graphicTextGap="10" layoutX="20.0" prefHeight="50.0" prefWidth="560.0" text="Produkty">
-        <font>
-            <Font size="18.0" />
-        </font>
-        <graphic>
-            <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
-                <image>
-                    <Image url="@../../images/product-icon.png" />
-                </image>
-            </ImageView>
-        </graphic>
-    </Label>
+    <HBox alignment="CENTER_LEFT">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Produkty">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/product-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </Label>
+    </HBox>
 
-    <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
+    <HBox layoutX="20.0" layoutY="80.0" spacing="10">
+        <Button text="Dodaj produkt" styleClass="myButton, success" />
+        <Button text="Edytuj" styleClass="myButton, warning" />
+        <Button text="Usuń" styleClass="myButton, danger" />
+    </HBox>
+
+    <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
         <columns>
             <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="75.0" text="Nazwa" />

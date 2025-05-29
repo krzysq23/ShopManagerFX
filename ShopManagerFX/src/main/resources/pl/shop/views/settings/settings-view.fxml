@@ -8,20 +8,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.SettingsController">
 
-    <Label graphicTextGap="10" layoutX="20.0" prefHeight="50.0" prefWidth="560.0" text="Ustawienia">
-        <font>
-            <Font size="18.0" />
-        </font>
-        <graphic>
-            <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
-                <image>
-                    <Image url="@../../images/settings-icon.png" />
-                </image>
-            </ImageView>
-        </graphic>
-    </Label>
+    <HBox alignment="CENTER_LEFT">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Ustawienia">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/settings-icon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </Label>
+    </HBox>
 
 </AnchorPane>

@@ -2,6 +2,7 @@ package pl.shop.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -54,6 +55,7 @@ public class MainController {
         });
 
         VBox layout = new VBox(10, prompt, searchField, searchActionButton);
+        layout.setAlignment(Pos.CENTER);
         layout.setStyle("-fx-padding: 20;");
 
         Scene scene = new Scene(layout, 300, 150);
