@@ -1,4 +1,4 @@
-package pl.shop.controller;
+package pl.shop.controller.products;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

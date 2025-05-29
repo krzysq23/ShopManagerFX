@@ -1,4 +1,4 @@
-package pl.shop.controller;
+package pl.shop.controller.orders;
 
 
 public class OrdersController {

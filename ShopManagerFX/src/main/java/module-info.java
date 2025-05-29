@@ -9,4 +9,10 @@ module pl.shop.shopmanagerfx {
     exports pl.shop;
     exports pl.shop.controller;
     opens pl.shop.controller to javafx.fxml;
+    exports pl.shop.controller.products;
+    opens pl.shop.controller.products to javafx.fxml;
+    exports pl.shop.controller.orders;
+    opens pl.shop.controller.orders to javafx.fxml;
+    exports pl.shop.controller.settings;
+    opens pl.shop.controller.settings to javafx.fxml;
 }
