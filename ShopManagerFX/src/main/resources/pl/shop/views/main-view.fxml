@@ -39,7 +39,7 @@
             </Label>
             <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
             <!-- Ikona lupy -->
-            <Button prefHeight="41.0" prefWidth="43.0" styleClass="menuButtonTop">
+            <Button fx:id="searchButton" onAction="#openSearchWindow" prefHeight="41.0" prefWidth="43.0" styleClass="menuButtonTop" >
                 <graphic>
                     <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
