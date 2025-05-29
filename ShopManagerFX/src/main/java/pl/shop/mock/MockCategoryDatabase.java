@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class MockCategoryDatabase {
 
-    private static int increment = 120;
+    private static int increment = 6;
 
     public static ObservableList<Category> getAllCategories() {
         return categories;

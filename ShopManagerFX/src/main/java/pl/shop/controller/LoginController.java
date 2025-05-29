@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import pl.shop.mock.MockUsersDatabase;
 import pl.shop.service.StageManager;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class LoginController {
         String login = loginField.getText();
         String password = passwordField.getText();
 
-        if ("admin".equals(login) && "admin".equals(password)) {
+        if (MockUsersDatabase.authenticate(login, password)) {
             StageManager.getInstance().setUserName(login);
             StageManager.getInstance().loadScene("main");
         } else {
