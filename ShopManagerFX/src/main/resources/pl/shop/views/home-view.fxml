@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +16,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.HomeController">
+<?import javafx.scene.layout.VBox?>
+<AnchorPane prefHeight="458.0" prefWidth="617.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.HomeController">
 
     <HBox alignment="CENTER_LEFT">
         <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Strona główna">
@@ -34,7 +36,8 @@
             </padding>
         </Label>
     </HBox>
-   <GridPane layoutY="67.0" prefHeight="270.0" prefWidth="510.0">
+
+   <GridPane AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
      <columnConstraints>
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -44,29 +47,62 @@
        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
      </rowConstraints>
       <children>
+          <!-- Column 1 -->
          <HBox prefHeight="100.0" prefWidth="200.0">
+             <padding>
+                 <Insets top="10" right="10" bottom="10" left="10"/>
+             </padding>
             <children>
-               <LineChart>
-                 <xAxis>
-                   <CategoryAxis side="BOTTOM" />
-                 </xAxis>
-                 <yAxis>
-                   <NumberAxis side="LEFT" />
-                 </yAxis>
+               <LineChart fx:id="lineChart">
+                   <xAxis>
+                       <NumberAxis label="Dni" />
+                   </xAxis>
+                   <yAxis>
+                       <NumberAxis label="Wartość" />
+                   </yAxis>
                </LineChart>
             </children>
          </HBox>
+          <!-- Column 2 -->
          <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+             <padding>
+                 <Insets top="10" right="10" bottom="10" left="10"/>
+             </padding>
             <children>
-               <ListView prefHeight="200.0" prefWidth="200.0" />
+                <VBox spacing="5">
+                    <Label styleClass="section-title" text="📅 Nadchodzące wydarzenia:" />
+                    <Label text="Dostawa #2025/12 o 14:00" />
+                </VBox>
             </children>
          </HBox>
-         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+          <!-- Column 3 -->
+         <HBox alignment="CENTER" prefHeight="100.0" GridPane.rowIndex="1">
+             <padding>
+                 <Insets top="10" right="10" bottom="10" left="10"/>
+             </padding>
             <children>
-               <Label text="Label" />
+                <VBox spacing="5">
+                    <Label styleClass="section-title" text="⛔ Produkty bliskie zera:" />
+                    <ListView fx:id="lowStockList">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="- Mleko 1L (2 szt.)" />
+                                <String fx:value="- Papier A4 (3 szt.)" />
+                            </FXCollections>
+                        </items>
+                    </ListView>
+                </VBox>
             </children>
          </HBox>
-         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <!-- Column 4 -->
+         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+             <padding>
+                 <Insets top="10" right="10" bottom="10" left="10"/>
+             </padding>
+             <children>
+                 <Label styleClass="section-title" text="Wykres dostaw i zamówień (ostatnie 7 dni)" />
+             </children>
+         </HBox>
       </children>
    </GridPane>
 
