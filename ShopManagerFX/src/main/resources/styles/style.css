@@ -4,3 +4,42 @@
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
+#topMenuPanel {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 0 0 1px 0;
+}
+#leftMenuPanel {
+    -fx-background-color: #f9f9f9;
+    -fx-pref-width: 200px;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 0 1px 0 0;
+}
+.menuButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+    -fx-pref-width: 190px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+.menuButton:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+    -fx-translate-x: 5px;
+}
+.menuButtonTop {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+.menuButtonTop:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+#logoutButton {
+
+}

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +16,7 @@ public class StageManager {
 
     private static StageManager instance;
     private Stage stage;
-    private HashMap<String, Pane> screenMap = new HashMap<>();
+    private HashMap<String, URL> screenMap = new HashMap<>();
     private Map<String, String> sceneTitles = Map.of(
             "login", "Panel loggowania",
             "main", "Panel główny"
@@ -35,7 +36,7 @@ public class StageManager {
         this.stage = stage;
     }
 
-    public void addScreen(String name, Pane pane) {
+    public void addScreen(String name, URL pane) {
         this.screenMap.put(name, pane);
     }
 
@@ -44,7 +45,7 @@ public class StageManager {
     }
 
     public void loadScene(String name) throws IOException {
-        Parent root = this.screenMap.get(name);
+        Parent root = new FXMLLoader(this.screenMap.get(name)).load();
         Scene currentScene = this.stage.getScene();
         double width = 1000, height = 600;
         if(currentScene != null) {

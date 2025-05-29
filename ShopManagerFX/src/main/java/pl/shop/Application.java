@@ -14,10 +14,10 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
 
         StageManager.getInstance().setPrimaryStage(stage);
-        StageManager.getInstance().addScreen("login", FXMLLoader.load(getClass().getResource("login-view.fxml")));
-        StageManager.getInstance().addScreen("main", FXMLLoader.load(getClass().getResource("main-view.fxml")));
+        StageManager.getInstance().addScreen("login", getClass().getResource("login-view.fxml"));
+        StageManager.getInstance().addScreen("main", getClass().getResource("main-view.fxml"));
 
-        StageManager.getInstance().loadScene("main");
+        StageManager.getInstance().loadScene("login");
     }
 
     public static void main(String[] args) {
