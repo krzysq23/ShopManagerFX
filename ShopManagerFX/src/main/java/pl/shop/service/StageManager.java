@@ -3,6 +3,7 @@ package pl.shop.service;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -59,5 +60,14 @@ public class StageManager {
         this.stage.setScene(scene);
         this.stage.setTitle(this.sceneTitles.get(name));
         this.stage.show();
+    }
+
+    public Parent getParent(String name) {
+        try {
+            return new FXMLLoader(this.screenMap.get(name)).load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -70,7 +70,7 @@
     <left>
 
         <VBox fx:id="leftMenuPanel" spacing="5">
-            <Button onAction="#handleBtn1Click" styleClass="menuButton" text="Lista produktów">
+            <Button onAction="#handleProductListClick" styleClass="menuButton" text="Lista produktów">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
@@ -79,7 +79,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleBtn2Click" styleClass="menuButton" text="Dodaj produkt">
+            <Button onAction="#handleAddProductClick" styleClass="menuButton" text="Dodaj produkt">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
@@ -88,7 +88,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleBtn3Click" styleClass="menuButton" text="Ustawienia">
+            <Button onAction="#handleSettingsClick" styleClass="menuButton" text="Ustawienia">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
@@ -97,7 +97,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button onAction="#handleBtn3Click" styleClass="menuButton" text="Profil">
+            <Button onAction="#handleProfileClick" styleClass="menuButton" text="Profil">
                 <graphic>
                     <ImageView fitHeight="16" fitWidth="16">
                         <image>
@@ -112,28 +112,7 @@
 
     <!-- Center -->
     <center>
-        <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-             <Label layoutX="19.0" prefHeight="80.0" prefWidth="560.0" text="Lista produktów">
-                <font>
-                   <Font size="20.0" />
-                </font>
-                 <graphic>
-                     <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                         <image>
-                             <Image url="@images/warehouse-icon.png" />
-                         </image>
-                     </ImageView>
-                 </graphic>
-             </Label>
-            <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
-              <columns>
-                  <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-                  <TableColumn fx:id="colName" prefWidth="75.0" text="Nazwa" />
-                  <TableColumn fx:id="colQuantity" prefWidth="75.0" text="Ilość" />
-                  <TableColumn fx:id="colPrice" prefWidth="75.0" text="Cena" />
-              </columns>
-            </TableView>
-        </AnchorPane>
+        <AnchorPane fx:id="contentPane"/>
     </center>
 
 </BorderPane>

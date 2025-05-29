@@ -16,8 +16,11 @@ public class Application extends javafx.application.Application {
         StageManager.getInstance().setPrimaryStage(stage);
         StageManager.getInstance().addScreen("login", getClass().getResource("login-view.fxml"));
         StageManager.getInstance().addScreen("main", getClass().getResource("main-view.fxml"));
+        StageManager.getInstance().addScreen("products", getClass().getResource("add-product-view.fxml"));
+        StageManager.getInstance().addScreen("addProduct", getClass().getResource("products-view.fxml"));
+        StageManager.getInstance().addScreen("settings", getClass().getResource("settings-view.fxml"));
 
-        StageManager.getInstance().loadScene("login");
+        StageManager.getInstance().loadScene("main");
     }
 
     public static void main(String[] args) {
