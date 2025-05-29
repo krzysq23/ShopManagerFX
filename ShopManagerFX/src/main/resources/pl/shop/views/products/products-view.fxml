@@ -41,7 +41,6 @@
         <HBox spacing="10" alignment="CENTER">
             <Label text="Wyszukaj:" />
             <TextField fx:id="searchProductField" promptText="Wpisz nazwę..." />
-            <Button mnemonicParsing="false" onAction="#searchProductButton" styleClass="myButton, info" text="Szukaj" />
         </HBox>
     </HBox>
 

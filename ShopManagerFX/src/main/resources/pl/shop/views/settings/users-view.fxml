@@ -30,13 +30,18 @@
         </Label>
     </HBox>
 
-    <HBox layoutX="20.0" layoutY="80.0" spacing="10">
+    <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
         <Button text="Dodaj użytkownika" styleClass="myButton, success" />
         <Button text="Edytuj" styleClass="myButton, warning" />
         <Button text="Usuń" styleClass="myButton, danger" />
+        <Region HBox.hgrow="ALWAYS" />
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Wyszukaj:" />
+            <TextField fx:id="searchUserField" promptText="Wpisz nazwę..." />
+        </HBox>
     </HBox>
 
-    <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
+    <TableView fx:id="userTable" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
         <columns>
             <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="colLogin" prefWidth="75.0" text="Login" />

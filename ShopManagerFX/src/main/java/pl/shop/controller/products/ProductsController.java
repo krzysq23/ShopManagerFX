@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import pl.shop.mock.MockProductDatabase;
+import pl.shop.mock.MockUsersDatabase;
 import pl.shop.model.Product;
 
 import java.io.IOException;
@@ -35,12 +36,12 @@ public class ProductsController {
         colPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 
         tableView.setItems(MockProductDatabase.getAllProducts());
+
+        searchProductField.textProperty().addListener((observable, oldValue, newValue) -> {
+            String lowerCaseFilter = newValue.toLowerCase();
+            System.out.println("Wyszukiwanie produktu: " + lowerCaseFilter);
+            tableView.setItems(MockProductDatabase.search(lowerCaseFilter));
+        });
     }
 
-    @FXML
-    private void searchProductButton(ActionEvent event) throws IOException {
-        String query = searchProductField.getText();
-        System.out.println("Wyszukiwanie: " + query);
-        tableView.setItems(MockProductDatabase.search(query));
-    }
 }
