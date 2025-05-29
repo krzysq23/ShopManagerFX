@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.TextField?>
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.products.CategoriesController">
 
     <HBox alignment="CENTER_LEFT">
@@ -31,17 +33,22 @@
         </Label>
     </HBox>
 
-    <HBox layoutX="20.0" layoutY="80.0" spacing="10">
+    <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
         <Button styleClass="myButton, success" text="Dodaj kategorię" />
         <Button styleClass="myButton, warning" text="Edytuj" />
         <Button styleClass="myButton, danger" text="Usuń" />
+        <Region HBox.hgrow="ALWAYS" />
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Wyszukaj:" />
+            <TextField fx:id="searchCategoryField" promptText="Wpisz nazwę..." />
+            <Button mnemonicParsing="false" onAction="#searchCategoryButton" styleClass="myButton, info" text="Szukaj" />
+        </HBox>
     </HBox>
 
     <TableView fx:id="categoriesTable" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
         <columns>
-            <TableColumn fx:id="nazwaColumn" prefWidth="200" text="Nazwa" />
-            <TableColumn fx:id="cenaColumn" prefWidth="100" text="Cena" />
-            <TableColumn fx:id="kategoriaColumn" prefWidth="150" text="Kategoria" />
+            <TableColumn fx:id="colId" prefWidth="200" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="100" text="Nazwa" />
         </columns>
     </TableView>
 

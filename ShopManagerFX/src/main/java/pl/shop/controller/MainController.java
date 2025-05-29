@@ -32,28 +32,6 @@ public class MainController {
     @FXML
     private void openSearchWindow(ActionEvent event) throws IOException {
         StageManager.getInstance().loadModal("search_modal", "Wyszukiwanie", 300, 150);
-//        Stage searchStage = new Stage();
-//        searchStage.initModality(Modality.APPLICATION_MODAL);
-//        searchStage.setResizable(false);
-//        searchStage.setTitle("Wyszukiwanie");
-//
-//        Label prompt = new Label("Wpisz czego szukasz:");
-//        TextField searchField = new TextField();
-//        Button searchActionButton = new Button("Szukaj");
-//
-//        searchActionButton.setOnAction(e -> {
-//            String query = searchField.getText();
-//            System.out.println("Wyszukiwanie: " + query);
-//            searchStage.close();
-//        });
-//
-//        VBox layout = new VBox(10, prompt, searchField, searchActionButton);
-//        layout.setAlignment(Pos.CENTER);
-//        layout.setStyle("-fx-padding: 20;");
-//
-//        Scene scene = new Scene(layout, 300, 150);
-//        searchStage.setScene(scene);
-//        searchStage.showAndWait();
     }
 
     @FXML

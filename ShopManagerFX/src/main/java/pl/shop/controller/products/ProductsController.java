@@ -2,10 +2,15 @@ package pl.shop.controller.products;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import pl.shop.mock.MockProductDatabase;
 import pl.shop.model.Product;
+
+import java.io.IOException;
 
 public class ProductsController {
 
@@ -19,6 +24,8 @@ public class ProductsController {
     private TableColumn<Product, Integer> colQuantity;
     @FXML
     private TableColumn<Product, Double> colPrice;
+    @FXML
+    private TextField searchProductField;
 
     public void initialize() {
 
@@ -27,11 +34,13 @@ public class ProductsController {
         colQuantity.setCellValueFactory(cellData -> cellData.getValue().quantityProperty().asObject());
         colPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 
-        ObservableList<Product> products = FXCollections.observableArrayList(
-                new Product(1, "Mleko", 10, 2.5),
-                new Product(2, "Chleb", 5, 3.0),
-                new Product(3, "Masło", 7, 4.2)
-        );
-        tableView.setItems(products);
+        tableView.setItems(MockProductDatabase.getAllProducts());
+    }
+
+    @FXML
+    private void searchProductButton(ActionEvent event) throws IOException {
+        String query = searchProductField.getText();
+        System.out.println("Wyszukiwanie: " + query);
+        tableView.setItems(MockProductDatabase.search(query));
     }
 }

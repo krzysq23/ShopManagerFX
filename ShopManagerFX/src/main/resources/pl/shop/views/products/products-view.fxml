@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.products.ProductsController">
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.products.ProductsController">
 
     <HBox alignment="CENTER_LEFT">
         <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Produkty">
@@ -30,10 +33,16 @@
         </Label>
     </HBox>
 
-    <HBox layoutX="20.0" layoutY="80.0" spacing="10">
-        <Button text="Dodaj produkt" styleClass="myButton, success" />
-        <Button text="Edytuj" styleClass="myButton, warning" />
-        <Button text="Usuń" styleClass="myButton, danger" />
+    <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
+        <Button styleClass="myButton, success" text="Dodaj produkt" />
+        <Button styleClass="myButton, warning" text="Edytuj" />
+        <Button styleClass="myButton, danger" text="Usuń" />
+        <Region HBox.hgrow="ALWAYS" />
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Wyszukaj:" />
+            <TextField fx:id="searchProductField" promptText="Wpisz nazwę..." />
+            <Button mnemonicParsing="false" onAction="#searchProductButton" styleClass="myButton, info" text="Szukaj" />
+        </HBox>
     </HBox>
 
     <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
