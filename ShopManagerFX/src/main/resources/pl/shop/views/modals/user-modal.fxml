@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import org.controlsfx.control.CheckComboBox?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.modals.UserModalController">
+
+    <children>
+        <GridPane AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"  AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" hgap="10" vgap="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TextField fx:id="userId" visible="false" managed="false" />
+
+            <Label text="Login:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="loginField" promptText="Login"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Hasło:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="passwordField" promptText="Hasło"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Rola:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <CheckComboBox fx:id="roleComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+
+            <Button text="Zapisz" onAction="#handleSaveButton"
+                    GridPane.rowIndex="4" GridPane.columnIndex="1"
+                    styleClass="myButton, success"/>
+        </GridPane>
+    </children>
+
+</AnchorPane>

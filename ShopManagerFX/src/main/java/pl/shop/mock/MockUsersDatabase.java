@@ -33,6 +33,27 @@ public class MockUsersDatabase {
         return false;
     }
 
+    public static void add(User user) {
+        user.idProperty().set(getIncrement());
+        users.add(user);
+    }
+
+    public static void edit(User user) {
+        User u = users.stream()
+                .filter(prod -> prod.getId() == user.getId())
+                .findFirst()
+                .orElse(null);
+        if (u != null) {
+            u.loginProperty().set(user.getLogin());
+            u.passwordProperty().set(user.getPassword());
+            u.rolesProperty().set(user.getRoles());
+        }
+    }
+
+    public static void remove(User user) {
+        users.remove(user);
+    }
+
     public static int getIncrement() {
         return increment++;
     }

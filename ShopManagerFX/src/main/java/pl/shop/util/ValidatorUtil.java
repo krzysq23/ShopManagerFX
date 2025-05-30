@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.CheckComboBox;
 
 public final class ValidatorUtil {
 
@@ -34,6 +35,17 @@ public final class ValidatorUtil {
             setErrorStyle(combo, true);
         } else {
             setErrorStyle(combo, false);
+        }
+        return valid;
+    }
+
+    public boolean validCheckComboBox(CheckComboBox checkComboBox) {
+        boolean valid = true;
+        if (checkComboBox.getCheckModel().getCheckedItems().isEmpty()) {
+            valid = false;
+            setErrorStyle(checkComboBox, true);
+        } else {
+            setErrorStyle(checkComboBox, false);
         }
         return valid;
     }

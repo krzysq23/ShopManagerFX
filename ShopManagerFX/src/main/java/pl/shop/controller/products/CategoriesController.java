@@ -54,7 +54,7 @@ public class CategoriesController {
     private void removeCategoryButton(ActionEvent event) throws IOException {
         Category selectedCategory = categoriesTable.getSelectionModel().getSelectedItem();
         if (selectedCategory != null) {
-            System.out.println("Wybrano produkt: " + selectedCategory.getName());
+            System.out.println("Usunięto kategorię: " + selectedCategory.getName());
             if(AlertService.confirm("Usuwanie kategorii", "Czy na pewno chcesz usunąć kategorię " + selectedCategory.getName() + "?")) {
                 MockCategoryDatabase.remove(selectedCategory);
             }

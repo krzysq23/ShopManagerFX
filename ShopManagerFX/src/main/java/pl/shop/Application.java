@@ -28,6 +28,7 @@ public class Application extends javafx.application.Application {
         StageManager.getInstance().addScreen("search_modal", getClass().getResource("views/modals/search-modal.fxml"));
         StageManager.getInstance().addScreen("product_modal", getClass().getResource("views/modals/product-modal.fxml"));
         StageManager.getInstance().addScreen("category_modal", getClass().getResource("views/modals/category-modal.fxml"));
+        StageManager.getInstance().addScreen("user_modal", getClass().getResource("views/modals/user-modal.fxml"));
 
         StageManager.getInstance().loadScene("main");
     }
