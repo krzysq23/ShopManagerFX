@@ -31,6 +31,25 @@ public class MockCategoryDatabase {
         return categories.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
     }
 
+    public static void add(Category category) {
+        category.idProperty().set(getIncrement());
+        categories.add(category);
+    }
+
+    public static void edit(Category category) {
+        Category c = categories.stream()
+                .filter(prod -> prod.getId() == category.getId())
+                .findFirst()
+                .orElse(null);
+        if (c != null) {
+            c.nameProperty().set(category.getName());
+        }
+    }
+
+    public static void remove(Category category) {
+        categories.remove(category);
+    }
+
     public static int getIncrement() {
         return increment++;
     }
