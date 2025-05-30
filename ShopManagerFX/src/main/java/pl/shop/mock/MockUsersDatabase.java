@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class MockUsersDatabase {
 
-    private static int increment = 3;
+    private static int increment = 4;
 
     public static ObservableList<User> getAllUsers() {
         return users;

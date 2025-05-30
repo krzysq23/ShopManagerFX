@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 public class MockEventsDatabase {
 
-    private static int increment = 4;
+    private static int increment = 5;
 
     public static ObservableList<Event> getAllEvents() {
         return events;

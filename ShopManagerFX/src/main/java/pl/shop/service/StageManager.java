@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
+import pl.shop.util.ParamReceiver;
 
 import java.io.IOException;
 import java.net.URL;
@@ -69,12 +70,19 @@ public class StageManager {
         this.stage.show();
     }
 
-    public void loadModal(String modalName, String modalTitle, Integer width, Integer height) throws IOException {
+    public void loadModal(String modalName, String modalTitle, Integer width, Integer height, Object... obj) throws IOException {
         Stage modalScene = new Stage();
         modalScene.initModality(Modality.APPLICATION_MODAL);
         modalScene.setResizable(false);
         modalScene.setTitle(modalTitle);
-        Parent root = new FXMLLoader(this.screenMap.get(modalName)).load();
+        FXMLLoader loader = new FXMLLoader(this.screenMap.get(modalName));
+        Parent root = loader.load();
+        if(obj != null && obj.length > 0) {
+            Object controller = loader.getController();
+            if (controller instanceof ParamReceiver) {
+                ((ParamReceiver) controller).receiveParams(obj);
+            }
+        }
         root.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
         Scene scene = new Scene(root, width, height);
         modalScene.setScene(scene);

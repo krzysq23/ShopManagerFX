@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class MockProductDatabase {
 
-    private static int increment = 120;
+    private static int increment = 121;
 
     public static ObservableList<Product> getAllProducts() {
         return products;
@@ -23,8 +23,34 @@ public class MockProductDatabase {
         return FXCollections.observableArrayList(filtered);
     }
 
+    public static Product findById(int id) {
+        return products.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
+    }
+
     public static int getIncrement() {
         return increment++;
+    }
+
+    public static void add(Product product) {
+        product.idProperty().set(getIncrement());
+        products.add(product);
+    }
+
+    public static void edit(Product product) {
+        Product p = products.stream()
+                .filter(prod -> prod.getId() == product.getId())
+                .findFirst()
+                .orElse(null);
+        if (p != null) {
+            p.nameProperty().set(product.getName());
+            p.quantityProperty().set(product.getQuantity());
+            p.priceProperty().set(product.getPrice());
+            p.categoryProperty().set(product.getCategory());
+        }
+    }
+
+    public static void remove(Product product) {
+        products.remove(product);
     }
 
     private static final ObservableList<Product> products = FXCollections.observableArrayList(

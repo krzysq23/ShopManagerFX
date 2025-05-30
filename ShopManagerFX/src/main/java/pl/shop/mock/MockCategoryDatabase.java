@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class MockCategoryDatabase {
 
-    private static int increment = 6;
+    private static int increment = 7;
 
     public static ObservableList<Category> getAllCategories() {
         return categories;
@@ -21,6 +21,14 @@ public class MockCategoryDatabase {
                 .collect(Collectors.toList());
 
         return FXCollections.observableArrayList(filtered);
+    }
+
+    public static Category findByName(String name) {
+        return categories.stream().filter(c -> c.getName().equals(name)).findFirst().orElse(null);
+    }
+
+    public static Category findById(int id) {
+        return categories.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
     }
 
     public static int getIncrement() {

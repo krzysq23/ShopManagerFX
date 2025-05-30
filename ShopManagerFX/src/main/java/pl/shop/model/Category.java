@@ -18,4 +18,9 @@ public class Category {
 
     public SimpleIntegerProperty idProperty() { return id; }
     public SimpleStringProperty nameProperty() { return name; }
+
+    @Override
+    public String toString() {
+        return name.getValue();
+    }
 }

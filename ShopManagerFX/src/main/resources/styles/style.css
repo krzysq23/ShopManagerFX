@@ -87,3 +87,8 @@
 .myButton.danger:hover {
     -fx-background-color: #c0392b;
 }
+.error {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-background-color: #ffe6e6;
+}
