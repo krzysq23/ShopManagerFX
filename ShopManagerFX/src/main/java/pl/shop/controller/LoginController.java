@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import pl.shop.mock.MockUsersDatabase;
+import pl.shop.service.AlertService;
 import pl.shop.service.StageManager;
 
 import java.io.IOException;
@@ -27,14 +28,8 @@ public class LoginController {
             StageManager.getInstance().setUserName(login);
             StageManager.getInstance().loadScene("main");
         } else {
-            showAlert(Alert.AlertType.ERROR, "Błąd", "Nieprawidłowy login lub hasło.");
+            AlertService.show(Alert.AlertType.ERROR, "Błąd", "Nieprawidłowy login lub hasło.");
         }
     }
 
-    private void showAlert(Alert.AlertType type, String title, String message) {
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }

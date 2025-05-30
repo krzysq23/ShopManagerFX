@@ -131,6 +131,7 @@
         <AnchorPane fx:id="contentPane"/>
     </center>
 
+    <!-- Footer -->
     <bottom>
         <HBox alignment="CENTER_RIGHT" fx:id="footerPanel">
             <Label text="Wersja 1.0 • © 2025 System Magazynowy"/>

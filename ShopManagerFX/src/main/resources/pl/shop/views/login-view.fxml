@@ -25,5 +25,7 @@
 
         <Button text="Zaloguj"
                 onAction="#handleLogin"
-                GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                GridPane.rowIndex="2"
+                GridPane.columnIndex="1"
+                styleClass="myButton, success"/>
 </GridPane>

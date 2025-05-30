@@ -19,7 +19,7 @@ public class Application extends javafx.application.Application {
         StageManager.getInstance().setPrimaryStage(stage);
         StageManager.getInstance().addScreen("login", getClass().getResource("views/login-view.fxml"));
         StageManager.getInstance().addScreen("main", getClass().getResource("views/main-view.fxml"));
-        StageManager.getInstance().addScreen("home", getClass().getResource("views/home-view.fxml"));
+        StageManager.getInstance().addScreen("home", getClass().getResource("views/dashboard-view.fxml"));
         StageManager.getInstance().addScreen("products", getClass().getResource("views/products/products-view.fxml"));
         StageManager.getInstance().addScreen("categories", getClass().getResource("views/products/categories-view.fxml"));
         StageManager.getInstance().addScreen("orders", getClass().getResource("views/orders/orders-view.fxml"));
