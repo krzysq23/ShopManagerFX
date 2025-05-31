@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
@@ -10,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.collections.FXCollections?>
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.settings.SettingsController">
 
     <HBox alignment="CENTER_LEFT">
@@ -29,5 +28,108 @@
             </padding>
         </Label>
     </HBox>
+
+    <TabPane fx:id="settingsTabPane" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="60">
+
+        <tabs>
+
+            <Tab text="Konto i bezpieczeństwo" closable="false">
+                <VBox spacing="10">
+                    <Label text="Zmień hasło:"/>
+                    <PasswordField fx:id="oldPasswordField" maxWidth="250" promptText="Stare hasło"/>
+                    <PasswordField fx:id="newPasswordField" maxWidth="250" promptText="Nowe hasło"/>
+                    <PasswordField fx:id="confirmPasswordField" maxWidth="250" promptText="Potwierdź nowe hasło"/>
+                    <Button text="Zmień hasło" styleClass="myButton, success" onAction="#handleChangePassword"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Język i lokalizacja" closable="false">
+                <VBox spacing="10">
+                    <Label text="Wybierz język:"/>
+                    <ChoiceBox fx:id="languageChoiceBox" prefWidth="100">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Polski"/>
+                                <String fx:value="English"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+
+                    <Label text="Format daty:"/>
+                    <ChoiceBox fx:id="dateFormatChoiceBox" prefWidth="100">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="yyyy-MM-dd"/>
+                                <String fx:value="dd.MM.yyyy"/>
+                                <String fx:value="dd MM yyyy"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </VBox>
+            </Tab>
+
+            <Tab text="Magazyn" closable="false">
+                <VBox spacing="10">
+                    <Label text="Minimalny stan magazynowy:"/>
+                    <TextField fx:id="minStockField" maxWidth="100"/>
+
+                    <Label text="Domyślna jednostka miary:"/>
+                    <ChoiceBox fx:id="unitChoiceBox" prefWidth="100">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="szt"/>
+                                <String fx:value="kg"/>
+                                <String fx:value="l"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                    <Button text="Zapisz ustawienia" styleClass="myButton, success" onAction="#handleSaveWarehouseSettings"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Import / Eksport" closable="false">
+                <VBox spacing="10">
+                    <Label text="Domyślny format eksportu:"/>
+                    <ChoiceBox fx:id="exportFormatChoiceBox" prefWidth="100">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="CSV"/>
+                                <String fx:value="XLSX"/>
+                                <String fx:value="PDF"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+
+                    <Label text="Ścieżka do zapisu plików:"/>
+                    <TextField fx:id="exportPathField" maxWidth="100"/>
+                    <Button text="Zapisz ustawienia" styleClass="myButton, success" onAction="#handleSaveExportSettings"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Wygląd" closable="false">
+                <VBox spacing="10">
+                    <Label text="Motyw aplikacji:"/>
+                    <ChoiceBox fx:id="themeChoiceBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Light"/>
+                                <String fx:value="Dark"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+
+                    <Label text="Rozmiar czcionki:"/>
+                    <Slider fx:id="fontSizeSlider" min="10" max="24" value="14"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Powiadomienia" closable="false">
+                <VBox spacing="10">
+                    <CheckBox fx:id="emailAlertCheckBox" text="Wysyłaj e-mail przy niskim stanie"/>
+                    <CheckBox fx:id="desktopNotificationCheckBox" text="Pokazuj powiadomienia na pulpicie"/>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
 
 </AnchorPane>

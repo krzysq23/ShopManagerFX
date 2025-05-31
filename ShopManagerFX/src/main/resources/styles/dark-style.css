@@ -1,18 +1,18 @@
 .root {
-    -fx-background-image: url("background.jpg");
+    -fx-background-image: url("background-dark.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
 #topMenuPanel {
-    -fx-background-color: #f9f9f9;
-    -fx-border-color: #EFEFEF;
+    -fx-background-color: #3e3e42;
+    -fx-border-color: #2d2d30;
     -fx-border-width: 0 0 1px 0;
 }
 #leftMenuPanel {
-    -fx-background-color: #f9f9f9;
+    -fx-background-color: #3e3e42;
     -fx-pref-width: 200px;
-    -fx-border-color: #EFEFEF;
+    -fx-border-color: #2d2d30;
     -fx-border-width: 0 1px 0 0;
 }
 #footerPanel {
@@ -59,11 +59,31 @@
     -fx-border-color: transparent transparent #bdc3c7 transparent;
     -fx-border-width: 0 0 1 0;
     -fx-padding: 0 0 5 0;
+    -fx-max-width: Infinity;
 }
 #detailsOrderPane {
     -fx-background-color: #f9f9f9;
     -fx-border-color: #ccc;
     -fx-padding: 10;
+}
+/* ========== Settings Panel ========== */
+TabPane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+}
+TabPane .tab-header-area .tab {
+    -fx-cursor: hand;
+}
+TabPane VBox {
+    -fx-padding: 30 20 20 20;
+}
+TabPane .tab-header-area .tab:selected {
+    -fx-background-color: #f9f9f9;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
 }
 /* ========== BUTTONS ========== */
 .myButton {

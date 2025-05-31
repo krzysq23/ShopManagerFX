@@ -1,13 +1,8 @@
 package pl.shop.service;
 
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -22,6 +17,8 @@ public class StageManager {
     private static StageManager instance;
     private Stage stage;
     private String userName = "default";
+    private String theme = "Light";
+    private String cssPath = "/styles/light-style.css";
     private HashMap<String, URL> screenMap = new HashMap<>();
 
     private StageManager() {
@@ -54,16 +51,46 @@ public class StageManager {
         return this.userName;
     }
 
+    public String getTheme() {
+        return this.theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+        Scene currentScene = StageManager.getInstance().getCurrentScene();
+        if (theme.equals("Light")) {
+            this.cssPath = "/styles/light-style.css";
+            currentScene.getStylesheets().remove(getClass().getResource("/styles/dark-style.css").toExternalForm());
+            currentScene.getStylesheets().add(getClass().getResource("/styles/light-style.css").toExternalForm());
+        } else {
+            this.cssPath = "/styles/dark-style.css";
+            currentScene.getStylesheets().remove(getClass().getResource("/styles/light-style.css").toExternalForm());
+            currentScene.getStylesheets().add(getClass().getResource("/styles/dark-style.css").toExternalForm());
+        }
+    }
+
+    public String getCssPath() {
+        return this.cssPath;
+    }
+
+    public void setCssPath(String path) {
+        this.cssPath = path;
+    }
+
+    public Scene getCurrentScene() {
+        return this.stage.getScene();
+    }
+
     public void loadScene(String name) throws IOException {
         Parent root = new FXMLLoader(this.screenMap.get(name)).load();
-        Scene currentScene = this.stage.getScene();
+        Scene currentScene = getCurrentScene();
         double width = 1000, height = 600;
         if(currentScene != null) {
             width = currentScene.getWidth();
             height = currentScene.getHeight();
         }
         Scene scene = new Scene(root, width, height);
-        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(this.cssPath).toExternalForm());
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         this.stage.centerOnScreen();
         this.stage.setScene(scene);
@@ -83,7 +110,7 @@ public class StageManager {
                 ((ParamReceiver) controller).receiveParams(obj);
             }
         }
-        root.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource(this.cssPath).toExternalForm());
         Scene scene = new Scene(root, width, height);
         modalScene.setScene(scene);
         modalScene.showAndWait();

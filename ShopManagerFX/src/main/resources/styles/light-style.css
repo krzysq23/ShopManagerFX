@@ -1,0 +1,127 @@
+.root {
+    -fx-background-image: url("background.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+#topMenuPanel {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 0 0 1px 0;
+}
+#leftMenuPanel {
+    -fx-background-color: #f9f9f9;
+    -fx-pref-width: 200px;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 0 1px 0 0;
+}
+#footerPanel {
+    -fx-background-color: #f9f9f9;
+    -fx-alignment: CENTER;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 1px 0 0 0;
+    -fx-font-size: 10px;
+    -fx-padding: 3px 0;
+}
+.menuButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+    -fx-pref-width: 190px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+.menuButton:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+    -fx-translate-x: 5px;
+}
+.menuButtonTop {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+.menuButtonTop:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+#logoutButton {
+    -fx-padding: 0 20 0 20;
+    -fx-pref-height: 25px;
+}
+.sectionTitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: transparent transparent #bdc3c7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 5 0;
+    -fx-max-width: Infinity;
+}
+#detailsOrderPane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+    -fx-padding: 10;
+}
+/* ========== Settings Panel ========== */
+TabPane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+}
+TabPane .tab-header-area .tab {
+    -fx-cursor: hand;
+}
+TabPane VBox {
+    -fx-padding: 30 20 20 20;
+}
+TabPane .tab-header-area .tab:selected {
+    -fx-background-color: #f9f9f9;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+/* ========== BUTTONS ========== */
+.myButton {
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+}
+.myButton.success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.myButton.success:hover {
+    -fx-background-color: #1e8449;
+}
+.myButton.info {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.myButton.info:hover {
+    -fx-background-color: #2980b9;
+}
+.myButton.warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+.myButton.warning:hover {
+    -fx-background-color: #e67e22;
+}
+.myButton.danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+.myButton.danger:hover {
+    -fx-background-color: #c0392b;
+}
+.error {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-background-color: #ffe6e6;
+}
