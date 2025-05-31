@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -57,7 +58,9 @@ public class OrdersController {
             });
         });
 
-        ordersTable.setItems(filteredData);
+        SortedList<Order> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(ordersTable.comparatorProperty());
+        ordersTable.setItems(sortedData);
         ordersTable.setOnMouseClicked(this::onOrderSelected);
 
     }
