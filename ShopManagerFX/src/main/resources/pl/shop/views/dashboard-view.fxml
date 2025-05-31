@@ -60,7 +60,7 @@
                    </padding>
                   <children>
                       <VBox spacing="10" HBox.hgrow="ALWAYS">
-                          <Label styleClass="section-title" text="↘️ Produkty bliskie zera:" />
+                          <Label styleClass="sectionTitle" text="↘️ Produkty bliskie zera:" />
                           <ListView fx:id="lowStockList"/>
                       </VBox>
                   </children>
@@ -72,7 +72,7 @@
                    </padding>
                   <children>
                       <VBox spacing="10" HBox.hgrow="ALWAYS">
-                          <Label text="📅 Nadchodzące wydarzenia" styleClass="section-title" />
+                          <Label text="📅 Nadchodzące wydarzenia" styleClass="sectionTitle" />
                           <ListView fx:id="eventsListView" />
                           <TextField fx:id="newEventField" promptText="Nowe wydarzenie..."/>
                           <HBox spacing="10" alignment="CENTER_LEFT">

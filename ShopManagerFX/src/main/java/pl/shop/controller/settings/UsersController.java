@@ -39,7 +39,7 @@ public class UsersController {
 
         colId.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         colLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
-        colPassword.setCellValueFactory(cellData -> cellData.getValue().passwordProperty());
+        colPassword.setCellValueFactory(cellData -> new SimpleStringProperty("*".repeat(cellData.getValue().getPassword().length())));
         colRole.setCellValueFactory(cellData -> {
             SimpleListProperty<UserRole> rolesProp = cellData.getValue().rolesProperty();
             return Bindings.createStringBinding(

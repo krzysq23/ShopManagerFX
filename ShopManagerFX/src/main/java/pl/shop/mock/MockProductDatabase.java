@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import pl.shop.model.Product;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MockProductDatabase {
@@ -25,6 +27,10 @@ public class MockProductDatabase {
 
     public static Product findById(int id) {
         return products.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
+    }
+
+    public static List<Product> findByIds(List<Integer> ids) {
+        return products.stream().filter(p -> ids.contains(p.getId())).toList();
     }
 
     public static int getIncrement() {
@@ -181,5 +187,6 @@ public class MockProductDatabase {
             new Product(119, "Zestaw noży", 8, 100.0, 6),
             new Product(120, "Talerze porcelanowe", 10, 150.0, 6)
     );
-
+    private static final Map<Integer, Product> productsMap = products.stream()
+            .collect(Collectors.toMap(Product::getId, Function.identity()));
 }

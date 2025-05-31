@@ -5,12 +5,29 @@ import javafx.collections.ObservableList;
 import pl.shop.model.User;
 import pl.shop.model.UserRole;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MockUsersDatabase {
 
     private static int increment = 4;
+    private static final ObservableList<User> users = FXCollections.observableArrayList(
+            new User(1, "admin", "admin", FXCollections.observableArrayList(UserRole.ADMIN)),
+            new User(2, "user", "user", FXCollections.observableArrayList(UserRole.USER)),
+            new User(3, "test", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(4, "kowalski", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(5, "nowak", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(6, "janek", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(7, "tadek", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(8, "zenek", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(9, "janusz", "1234", FXCollections.observableArrayList(UserRole.USER)),
+            new User(10, "maciek", "1234", FXCollections.observableArrayList(UserRole.USER))
+    );;
+    private static final Map<Integer, User> usersMap = users.stream()
+            .collect(Collectors.toMap(User::getId, Function.identity()));
 
     public static ObservableList<User> getAllUsers() {
         return users;
@@ -31,6 +48,10 @@ public class MockUsersDatabase {
             }
         }
         return false;
+    }
+
+    public static User findById(int userId) {
+        return usersMap.get(userId);
     }
 
     public static void add(User user) {
@@ -58,9 +79,4 @@ public class MockUsersDatabase {
         return increment++;
     }
 
-    private static final ObservableList<User> users = FXCollections.observableArrayList(
-            new User(1, "admin", "admin", FXCollections.observableArrayList(UserRole.ADMIN)),
-            new User(2, "user", "user", FXCollections.observableArrayList(UserRole.USER)),
-            new User(3, "test", "1234", FXCollections.observableArrayList(UserRole.USER))
-    );
 }

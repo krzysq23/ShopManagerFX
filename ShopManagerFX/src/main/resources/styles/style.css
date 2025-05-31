@@ -52,6 +52,19 @@
     -fx-padding: 0 20 0 20;
     -fx-pref-height: 25px;
 }
+.sectionTitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: transparent transparent #bdc3c7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 5 0;
+}
+#detailsOrderPane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+    -fx-padding: 10;
+}
 /* ========== BUTTONS ========== */
 .myButton {
     -fx-font-weight: bold;

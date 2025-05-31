@@ -30,13 +30,40 @@
         </Label>
     </HBox>
 
-    <TableView fx:id="tableView" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
-        <columns>
-            <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="colName" prefWidth="75.0" text="Nazwa" />
-            <TableColumn fx:id="colQuantity" prefWidth="75.0" text="Ilość" />
-            <TableColumn fx:id="colPrice" prefWidth="75.0" text="Cena" />
-        </columns>
-    </TableView>
+    <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
+        <Region HBox.hgrow="ALWAYS" />
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Wyszukaj:" />
+            <TextField fx:id="searchOrderField" promptText="Wpisz nazwę..." />
+        </HBox>
+    </HBox>
+
+    <VBox spacing="5" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="120">
+        <TableView fx:id="ordersTable">
+            <columns>
+                <TableColumn fx:id="calId" prefWidth="60" text="ID" />
+                <TableColumn fx:id="colCustomer" text="Klient" />
+                <TableColumn fx:id="colData" text="Data" />
+                <TableColumn fx:id="colStatus" text="Status" />
+            </columns>
+        </TableView>
+
+        <ScrollPane fitToWidth="true" fitToHeight="true"  maxHeight="500">
+            <content>
+                <VBox spacing="8" fx:id="detailsOrderPane" prefHeight="400">
+                    <Label text="📦 Szczegóły zamówienia" styleClass="sectionTitle"/>
+                    <Label fx:id="labelOrderId" text="ID: "/>
+                    <Label fx:id="labelCustomer" text="Klient: "/>
+                    <Label fx:id="labelDate" text="Data: "/>
+                    <Label fx:id="labelStatus" text="Status: "/>
+                    <Label fx:id="labelTotal" text="Łączna kwota: "/>
+
+                    <Label text="Produkty:" style="-fx-font-weight: bold;"/>
+                    <ListView fx:id="productList" minHeight="100" maxHeight="300" />
+                </VBox>
+            </content>
+        </ScrollPane>
+    </VBox>
+
 
 </AnchorPane>
