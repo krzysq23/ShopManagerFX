@@ -23,12 +23,12 @@
 <AnchorPane prefHeight="458.0" prefWidth="617.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.DashboardController">
 
     <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="617.0">
-        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Dashboard">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" styleClass="content-title" text="Dashboard">
             <font>
                 <Font size="18.0" />
             </font>
             <graphic>
-                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true" styleClass="png-image">
                     <image>
                         <Image url="@../images/home-icon.png" />
                     </image>

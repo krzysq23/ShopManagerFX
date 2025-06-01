@@ -19,9 +19,9 @@
     <!-- Top Panel -->
     <top>
         <HBox fx:id="topMenuPanel" spacing="10">
-            <Label prefHeight="41.0" prefWidth="100.0" graphicTextGap="10" text="Magazyn">
+            <Label prefHeight="41.0" prefWidth="100.0" graphicTextGap="10" styleClass="content-title" text="Magazyn">
                 <graphic>
-                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true" styleClass="png-image">
                         <image>
                             <Image url="@../images/warehouse-icon.png" />
                         </image>
@@ -41,7 +41,7 @@
             <!-- Ikona lupy -->
             <Button fx:id="searchButton" onAction="#openSearchWindow" prefHeight="41.0" prefWidth="43.0" styleClass="menuButtonTop" >
                 <graphic>
-                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true" styleClass="png-image">
                         <image>
                             <Image url="@../images/search-icon.png" />
                         </image>
@@ -49,9 +49,9 @@
                 </graphic>
             </Button>
             <!-- Avatar z menu użytkownika -->
-            <MenuButton fx:id="userMenuButton" alignment="CENTER" prefHeight="41.0" minWidth="100.0" graphicTextGap="5" styleClass="menuButtonTop">
+            <MenuButton fx:id="userMenuButton" alignment="CENTER" prefHeight="41.0" minWidth="100.0" graphicTextGap="5" text="admin" styleClass="menuButtonTop">
                 <graphic>
-                    <ImageView fitHeight="24.0" fitWidth="24.0">
+                    <ImageView fitHeight="24.0" fitWidth="24.0" styleClass="png-image">
                         <image>
                             <Image url="@../images/avatar-icon.png" />
                         </image>
@@ -70,7 +70,7 @@
         <VBox fx:id="leftMenuPanel" spacing="5">
             <Button fx:id="homeBtn" onAction="#handleHomeClick" styleClass="menuButton" graphicTextGap="10" text="Pulpit">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/home-icon.png" />
                         </image>
@@ -79,7 +79,7 @@
             </Button>
             <Button fx:id="productsBtn" onAction="#handleProductClick" styleClass="menuButton" graphicTextGap="10" text="Produkty">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/product-icon.png" />
                         </image>
@@ -88,7 +88,7 @@
             </Button>
             <Button fx:id="categoriesBtn" onAction="#handleCategoryClick" styleClass="menuButton" graphicTextGap="10" text="Kategorie">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/category-icon.png" />
                         </image>
@@ -97,7 +97,7 @@
             </Button>
             <Button fx:id="ordersBtn" onAction="#handleOrdersClick" styleClass="menuButton" graphicTextGap="10" text="Zamówienia">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/order-icon.png" />
                         </image>
@@ -106,7 +106,7 @@
             </Button>
             <Button fx:id="usersBtn" onAction="#handleUsersClick" styleClass="menuButton" graphicTextGap="10" text="Użytkownicy">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/user-icon.png" />
                         </image>
@@ -115,7 +115,7 @@
             </Button>
             <Button fx:id="settingsBtn" onAction="#handleSettingsClick" styleClass="menuButton" graphicTextGap="10" text="Ustawienia">
                 <graphic>
-                    <ImageView fitHeight="16" fitWidth="16">
+                    <ImageView fitHeight="16" fitWidth="16" styleClass="png-image">
                         <image>
                             <Image url="@../images/settings-icon.png" />
                         </image>

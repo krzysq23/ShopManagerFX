@@ -13,12 +13,12 @@
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.orders.OrdersController">
 
     <HBox alignment="CENTER_LEFT">
-        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Zamówienia">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" styleClass="content-title" text="Zamówienia">
             <font>
                 <Font size="18.0" />
             </font>
             <graphic>
-                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true" styleClass="png-image">
                     <image>
                         <Image url="@../../images/order-icon.png" />
                     </image>
@@ -33,7 +33,7 @@
     <HBox AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" spacing="10" alignment="CENTER_LEFT">
         <Region HBox.hgrow="ALWAYS" />
         <HBox spacing="10" alignment="CENTER">
-            <Label text="Wyszukaj:" />
+            <Label text="Wyszukaj:" styleClass="search-label" />
             <TextField fx:id="searchOrderField" promptText="Wpisz nazwę..." />
         </HBox>
     </HBox>

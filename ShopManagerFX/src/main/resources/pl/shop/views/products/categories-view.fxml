@@ -16,12 +16,12 @@
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.shop.controller.products.CategoriesController">
 
     <HBox alignment="CENTER_LEFT">
-        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Kategorie">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" styleClass="content-title" text="Kategorie">
             <font>
                 <Font size="18.0" />
             </font>
             <graphic>
-                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true" styleClass="png-image">
                     <image>
                         <Image url="@../../images/category-icon.png" />
                     </image>
@@ -39,7 +39,7 @@
         <Button onAction="#removeCategoryButton"  styleClass="myButton, danger" text="Usuń" />
         <Region HBox.hgrow="ALWAYS" />
         <HBox spacing="10" alignment="CENTER">
-            <Label text="Wyszukaj:" />
+            <Label text="Wyszukaj:" styleClass="search-label" />
             <TextField fx:id="searchCategoryField" promptText="Wpisz nazwę..." />
         </HBox>
     </HBox>

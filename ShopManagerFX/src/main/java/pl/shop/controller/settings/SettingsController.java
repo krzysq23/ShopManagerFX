@@ -1,11 +1,14 @@
 package pl.shop.controller.settings;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.util.StringConverter;
+import pl.shop.model.AppTheme;
 import pl.shop.service.StageManager;
 
 public class SettingsController {
@@ -23,7 +26,7 @@ public class SettingsController {
     @FXML
     private TextField exportPathField;
     @FXML
-    private ChoiceBox<String> themeChoiceBox;
+    private ChoiceBox<AppTheme> themeChoiceBox;
 
     @FXML
     public void initialize() {
@@ -36,17 +39,19 @@ public class SettingsController {
         unitChoiceBox.getSelectionModel().selectFirst();
         exportFormatChoiceBox.getSelectionModel().selectFirst();
         exportPathField.setText("/documents");
-        themeChoiceBox.getSelectionModel().selectFirst();
 
-        themeChoiceBox.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+        themeChoiceBox.setItems(FXCollections.observableArrayList(AppTheme.values()));
+        themeChoiceBox.getSelectionModel().select(StageManager.getInstance().getTheme());
+
+        languageChoiceBox.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             System.out.println("Wybrano język: " + newVal);
         });
+
         themeChoiceBox.setOnAction(event -> toggleTheme());
     }
 
     private void toggleTheme() {
-        String theme = themeChoiceBox.getValue();
-        StageManager.getInstance().setTheme(theme);
+        StageManager.getInstance().setTheme(themeChoiceBox.getValue());
     }
 
     public void handleSaveExportSettings(ActionEvent actionEvent) {

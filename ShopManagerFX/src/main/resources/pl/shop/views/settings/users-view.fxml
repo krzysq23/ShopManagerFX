@@ -13,12 +13,12 @@
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.settings.UsersController">
 
     <HBox alignment="CENTER_LEFT">
-        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Użytkownicy">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" styleClass="content-title" text="Użytkownicy">
             <font>
                 <Font size="18.0" />
             </font>
             <graphic>
-                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                <ImageView fitHeight="17" fitWidth="17" preserveRatio="true" styleClass="png-image">
                     <image>
                         <Image url="@../../images/user-icon.png" />
                     </image>
@@ -36,7 +36,7 @@
         <Button onAction="#removeUserButton" text="Usuń" styleClass="myButton, danger" />
         <Region HBox.hgrow="ALWAYS" />
         <HBox spacing="10" alignment="CENTER">
-            <Label text="Wyszukaj:" />
+            <Label text="Wyszukaj:" styleClass="search-label" />
             <TextField fx:id="searchUserField" promptText="Wpisz nazwę..." />
         </HBox>
     </HBox>

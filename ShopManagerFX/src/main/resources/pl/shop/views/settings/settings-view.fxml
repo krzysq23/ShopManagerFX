@@ -12,7 +12,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="pl.shop.controller.settings.SettingsController">
 
     <HBox alignment="CENTER_LEFT">
-        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" text="Ustawienia">
+        <Label graphicTextGap="10" layoutX="20.0" layoutY="20.0" prefHeight="70.0" prefWidth="510.0" styleClass="content-title" text="Ustawienia">
             <font>
                 <Font size="18.0" />
             </font>

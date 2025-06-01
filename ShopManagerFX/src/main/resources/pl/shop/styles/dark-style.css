@@ -5,27 +5,33 @@
     -fx-background-position: center center;
 }
 #topMenuPanel {
-    -fx-background-color: #3e3e42;
-    -fx-border-color: #2d2d30;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
     -fx-border-width: 0 0 1px 0;
 }
+.content-title,
+.search-label,
+#leftMenuPanel Button,
+#loginGrid Label {
+    -fx-text-fill: white;
+}
 #leftMenuPanel {
-    -fx-background-color: #3e3e42;
+    -fx-background-color: transparent;
     -fx-pref-width: 200px;
-    -fx-border-color: #2d2d30;
+    -fx-border-color: transparent;
     -fx-border-width: 0 1px 0 0;
 }
 #footerPanel {
-    -fx-background-color: #f9f9f9;
+    -fx-background-color: transparent;
     -fx-alignment: CENTER;
-    -fx-border-color: #EFEFEF;
+    -fx-border-color: transparent;
     -fx-border-width: 1px 0 0 0;
     -fx-font-size: 10px;
     -fx-padding: 3px 0;
 }
 .menuButton {
     -fx-background-color: transparent;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-border-color: transparent;
     -fx-pref-width: 190px;
     -fx-alignment: CENTER_LEFT;
@@ -35,18 +41,34 @@
     -fx-transition: all 0.3s ease;
 }
 .menuButton:hover {
-    -fx-background-color: rgba(0, 0, 0, 0.05);
+    -fx-background-color: #0065a9;
     -fx-translate-x: 5px;
 }
 .menuButtonTop {
     -fx-background-color: transparent;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-border-color: transparent;
     -fx-cursor: hand;
-    -fx-transition: all 0.3s ease;
 }
-.menuButtonTop:hover {
-    -fx-background-color: rgba(0, 0, 0, 0.05);
+.menu-button {
+    -fx-text-fill: white;
+}
+.png-image {
+    -fx-effect: dropshadow(gaussian, white, 10, 0.5, 0, 0);
+}
+.text-field {
+    -fx-background-color: #dddddd;
+    -fx-text-fill: black;
+}
+.table-view {
+    -fx-background-color: #dddddd;
+    -fx-control-inner-background: #dddddd;
+    -fx-table-cell-border-color: #cccccc;
+    -fx-table-header-border-color: #cccccc;
+}
+.list-view {
+    -fx-background-color: #dddddd;
+    -fx-control-inner-background: #dddddd;
 }
 #logoutButton {
     -fx-padding: 0 20 0 20;
@@ -55,14 +77,15 @@
 .sectionTitle {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
+    -fx-text-fill: white;
     -fx-border-color: transparent transparent #bdc3c7 transparent;
     -fx-border-width: 0 0 1 0;
     -fx-padding: 0 0 5 0;
     -fx-max-width: Infinity;
 }
 #detailsOrderPane {
-    -fx-background-color: #f9f9f9;
+    -fx-background-color: #dddddd;
+    -fx-control-inner-background: #dddddd;
     -fx-border-color: #ccc;
     -fx-padding: 10;
 }

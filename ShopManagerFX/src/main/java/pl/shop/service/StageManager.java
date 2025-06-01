@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
+import pl.shop.model.AppTheme;
 import pl.shop.util.ParamReceiver;
 
 import java.io.IOException;
@@ -17,8 +18,9 @@ public class StageManager {
     private static StageManager instance;
     private Stage stage;
     private String userName = "default";
-    private String theme = "Light";
-    private String cssPath = "/styles/light-style.css";
+    private AppTheme theme = AppTheme.LIGHT;
+    private String cssLightPath = "/pl/shop/styles/light-style.css";
+    private String cssDarkPath = "/pl/shop/styles/dark-style.css";
     private HashMap<String, URL> screenMap = new HashMap<>();
 
     private StageManager() {
@@ -51,30 +53,30 @@ public class StageManager {
         return this.userName;
     }
 
-    public String getTheme() {
+    public AppTheme getTheme() {
         return this.theme;
     }
 
-    public void setTheme(String theme) {
+    public String getCssPath() {
+        return (this.theme == AppTheme.LIGHT) ? this.cssLightPath : this.cssDarkPath;
+    }
+
+    public void loadCss(Scene scene) {
+        scene.getStylesheets().add(getClass().getResource(getCssPath()).toExternalForm());
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+    }
+
+    public void setTheme(AppTheme theme) {
+        if(this.theme == theme) return;
         this.theme = theme;
         Scene currentScene = StageManager.getInstance().getCurrentScene();
-        if (theme.equals("Light")) {
-            this.cssPath = "/styles/light-style.css";
-            currentScene.getStylesheets().remove(getClass().getResource("/styles/dark-style.css").toExternalForm());
-            currentScene.getStylesheets().add(getClass().getResource("/styles/light-style.css").toExternalForm());
+        if (theme == AppTheme.LIGHT) {
+            currentScene.getStylesheets().remove(getClass().getResource("/pl/shop/styles/dark-style.css").toExternalForm());
+            currentScene.getStylesheets().add(getClass().getResource("/pl/shop/styles/light-style.css").toExternalForm());
         } else {
-            this.cssPath = "/styles/dark-style.css";
-            currentScene.getStylesheets().remove(getClass().getResource("/styles/light-style.css").toExternalForm());
-            currentScene.getStylesheets().add(getClass().getResource("/styles/dark-style.css").toExternalForm());
+            currentScene.getStylesheets().remove(getClass().getResource("/pl/shop/styles/light-style.css").toExternalForm());
+            currentScene.getStylesheets().add(getClass().getResource("/pl/shop/styles/dark-style.css").toExternalForm());
         }
-    }
-
-    public String getCssPath() {
-        return this.cssPath;
-    }
-
-    public void setCssPath(String path) {
-        this.cssPath = path;
     }
 
     public Scene getCurrentScene() {
@@ -90,8 +92,7 @@ public class StageManager {
             height = currentScene.getHeight();
         }
         Scene scene = new Scene(root, width, height);
-        scene.getStylesheets().add(getClass().getResource(this.cssPath).toExternalForm());
-        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        loadCss(scene);
         this.stage.centerOnScreen();
         this.stage.setScene(scene);
         this.stage.show();
@@ -110,8 +111,8 @@ public class StageManager {
                 ((ParamReceiver) controller).receiveParams(obj);
             }
         }
-        root.getStylesheets().add(getClass().getResource(this.cssPath).toExternalForm());
         Scene scene = new Scene(root, width, height);
+        loadCss(scene);
         modalScene.setScene(scene);
         modalScene.showAndWait();
     }
