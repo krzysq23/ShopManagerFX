@@ -4,9 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.util.StringConverter;
 import pl.shop.model.AppTheme;
 import pl.shop.service.StageManager;
@@ -27,6 +25,10 @@ public class SettingsController {
     private TextField exportPathField;
     @FXML
     private ChoiceBox<AppTheme> themeChoiceBox;
+    @FXML
+    private Slider fontSizeSlider;
+    @FXML
+    private Label fontSizeLabel;
 
     @FXML
     public void initialize() {
@@ -48,10 +50,18 @@ public class SettingsController {
         });
 
         themeChoiceBox.setOnAction(event -> toggleTheme());
+
+        fontSizeSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            updateFontSize(newVal.doubleValue());
+        });
     }
 
     private void toggleTheme() {
         StageManager.getInstance().setTheme(themeChoiceBox.getValue());
+    }
+
+    private void updateFontSize(double size) {
+        fontSizeLabel.setStyle("-fx-font-size: " + size + "px;");
     }
 
     public void handleSaveExportSettings(ActionEvent actionEvent) {

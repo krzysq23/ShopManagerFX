@@ -119,7 +119,9 @@
                     </ChoiceBox>
 
                     <Label text="Rozmiar czcionki:"/>
-                    <Slider fx:id="fontSizeSlider" min="10" max="24" value="14"/>
+                    <Slider fx:id="fontSizeSlider" min="10" max="24" value="14"  maxWidth="100"/>
+                    <Label fx:id="fontSizeLabel" text="Przykładowy tekst" />
+
                 </VBox>
             </Tab>
 
