@@ -27,7 +27,7 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
+Build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 

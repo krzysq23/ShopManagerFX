@@ -12,7 +12,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
 
         stage.setTitle("ShopManagerFX");
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("images/app-icon.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("images/icon.png")));
         stage.setMinWidth(800);
         stage.setMinHeight(500);
 
